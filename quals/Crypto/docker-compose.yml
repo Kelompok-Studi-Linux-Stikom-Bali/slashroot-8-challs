@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  limb:
+    build:
+      context: .
+    image: crypto
+    container_name: slashroot8-limb
+    entrypoint: socat tcp-listen:8000,reuseaddr,fork exec:/home/app/chall.py
+    volumes:
+      - './limb:/home/app'
+    ports:
+      - '1011:8000'

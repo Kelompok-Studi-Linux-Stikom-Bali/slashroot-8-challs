@@ -1,0 +1,1 @@
+flag = b"slashroot8{just_s1mple_4e5_plus_x0r_ch4ll}"
