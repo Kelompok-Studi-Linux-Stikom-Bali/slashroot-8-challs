@@ -1,3 +1,5 @@
 DO NOT COPY THIS TO DESCRIPTION!
 
 slashroot8{my_khod4m_is_j4l4k_b4ali}
+
+How to complete the chall: `adb shell am start -a android.intent.action.VIEW -d "cekkhodam://khodamapp" com.example.cekkhodam`
