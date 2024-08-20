@@ -1,0 +1,7 @@
+services:
+  knc:
+    build: .
+    ports:
+    - 8000:8000
+    entrypoint: /etc/init.sh
+    restart: always
