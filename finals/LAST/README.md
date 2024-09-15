@@ -12,7 +12,7 @@ izin off, ada skripsi yang harus diketik 🗿🙏
 
 # Flag:
 
-`{hikss_l45t_ch4ll_r3v3r53_3n91n33r1n9_900dbye_CTF}`
+`slashroot8{hikss_l45t_ch4ll_r3v3r53_3n91n33r1n9_900dbye_CTF}`
 
 > [!NOTE]
 > DO NOT COPY FLAG TO DESCRIPTION!
