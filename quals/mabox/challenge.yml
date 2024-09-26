@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../../challenge.schema.yaml
+name: "Mabox"
+author: "rui"
+category: Pwn
+description: |
+    Bang ini kok shellcodenya gak jalan di remote ya?
+
+value: 1000
+type: StaticAttachment
+
+scripts:
+    start: cd chall && docker compose up -d
+    stop: cd chall && docker compose down --volumes
+
+flags:
+    - INTECHFEST{ingin_menjadi_pwner_handal_namun_enggan_crafting_shellcode}
+
+provide: ./dist.zip

@@ -1,0 +1,7 @@
+services:
+  mabox:
+    build: .
+    restart: on-failure
+    privileged: true
+    ports:
+      - 5000:5000
