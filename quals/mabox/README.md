@@ -7,7 +7,7 @@ rui
 ## Flag
 
 ```
-INTECHFEST{ingin_menjadi_pwner_handal_namun_enggan_crafting_shellcode}
+slashroot8{ingin_menjadi_pwner_handal_namun_enggan_crafting_shellcode}
 ```
 
 ## Description
