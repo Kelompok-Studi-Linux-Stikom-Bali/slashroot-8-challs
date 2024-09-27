@@ -1,27 +1,65 @@
 #!/usr/bin/env python3
 
-from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad
-from Crypto.Random import get_random_bytes
-from Crypto.Random.random import getrandbits
+import aes
+import os
 from secret import flag
+from binascii import hexlify
 
-KEY = get_random_bytes(16)
+KEY = os.urandom(16)
 
-def encrypt(pt, key):
-    cipher = AES.new(key, AES.MODE_ECB)
-    result = cipher.encrypt(pt)
-    return result
+def encrypt(key,s):
+    cipher = aes.AES(key)
+    s_block = aes.split_blocks(aes.pad(s))
+    ct = ''.join(i for i in [hexlify(cipher.encrypt_block(i)).decode() for i in s_block])
 
-def oracle(pt):
-    randbit = getrandbits(4)
-    pt = pad( pt + (b'A' * randbit) + flag, 16)
+    return ct
 
-    return encrypt(pt, KEY).hex()
+def decrypt():
+    return None
 
-if __name__ == '__main__':
+def main():
+    flag_enc = encrypt(KEY, flag)
+
+    banner = """
+   _____         ______  _____ 
+  / ____|  /\   |  ____|/ ____|
+ | (___   /  \  | |__  | (___  
+  \___ \ / /\ \ |  __|  \___ \ 
+  ____) / ____ \| |____ ____) |
+ |_____/_/    \_\______|_____/ 
+                               
+                               
+"""
+
+    menu = f"""
+Welcome to my secure AES algorithm
+you are not allowed to use your own key for security reason
+
+flag : {flag_enc}
+
+[1] Encrypt Msg
+[2] Decrypt Msg
+[3] Exit
+"""
+
+    print(banner)
+    print(menu)
+
     while True:
-        user_input = input("Input pesan untuk di encrypt : ")
-        res = oracle(user_input.encode())
-        print("Hasil encrypt : ")
-        print(res)
+
+        user_input = int(input("> "))
+
+        if user_input == 1:
+            user_pt = input("Msg to Encrypt : " ).encode("latin-1")
+            user_ct = encrypt(KEY,user_pt)
+            print(f"Your encrypted msg is : {user_ct}\n")
+        elif user_input == 2:
+            print("Under construction, please try again later\n")
+        elif user_input == 3:
+            print("Bye-Bye!")
+            exit()
+        else:
+            print("Input Invalid!\n")
+
+if __name__ == "__main__":
+    main()

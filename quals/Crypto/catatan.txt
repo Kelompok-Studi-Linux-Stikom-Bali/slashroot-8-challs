@@ -1,17 +1,13 @@
-Jumlah Chall : 4
+Jumlah Chall : 3
 
 Chall 1 (Easy):
-    Nama : Cephal
-    Problem: Simple AES ECB Padding Oracle Attack
+    Nama : Limb
+    Problem : aes encyrption only
 
 Chall 2 (Medium):
-    Nama : Limb
-    Problem : RSA
-
-Chall 3 (Hard):
     Nama : Trunk
-    Problem : ECDSA / DSA
-
-Chall 4 (Custom):
-    Nama : Abdomen
-    Problem : Custom Algorithm (LCG + PRNG)
+    Problem : Truncated lcg with RSA
+    
+Chall 3 (Hard):
+    Nama : Cephal
+    Problem: 1 round aes with no sub bytes

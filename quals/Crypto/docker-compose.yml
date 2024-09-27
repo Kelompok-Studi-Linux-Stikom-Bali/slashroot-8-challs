@@ -6,8 +6,28 @@ services:
       context: .
     image: crypto
     container_name: slashroot8-limb
-    entrypoint: socat tcp-listen:8000,reuseaddr,fork exec:/home/app/chall.py
+    entrypoint: socat tcp-listen:10011,reuseaddr,fork exec:/home/app/chall.py
     volumes:
       - './limb:/home/app'
     ports:
-      - '1011:8000'
+      - '10011:10011'
+  abdomen:
+    build:
+      context: .
+    image: crypto
+    container_name: slashroot8-abdomen
+    entrypoint: socat tcp-listen:10012,reuseaddr,fork exec:/home/app/chall.py
+    volumes:
+      - './abdomen:/home/app'
+    ports:
+      - '10012:10012'
+  chepal:
+    build:
+      context: .
+    image: crypto
+    container_name: slashroot8-chepal
+    entrypoint: socat tcp-listen:10013,reuseaddr,fork exec:/home/app/chall.py
+    volumes:
+      - './chepal:/home/app'
+    ports:
+      - '10013:10013'

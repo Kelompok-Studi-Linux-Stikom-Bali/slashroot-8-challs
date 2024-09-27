@@ -5,8 +5,8 @@ def send(ct):
     io.sendline(bytes(ct).hex().encode())
     return io.recvline()[:-1]
 
-io = process(["python3", "./chall.py"])
-#io = remote('localhost', 1011)
+# io = process(["python3", "./chall.py"])
+io = remote('localhost', 10011)
 
 ct = []
 while len(ct) < 6:

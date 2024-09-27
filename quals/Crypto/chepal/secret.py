@@ -1,1 +1,1 @@
-flag = b"slashroot8{just_s1mple_4e5_plus_x0r_ch4ll}"
+flag = b"slashroot8{wait_wut_how_is_1t_just_become_a_simpl3_x0r!!!!!!!!!}"

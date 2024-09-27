@@ -9,6 +9,8 @@ WORKDIR /home/app
 
 # Install pycryptodome using pip for the specific user
 RUN pip install pycryptodome
+RUN pip install sympy
+
 
 # Set the PATH environment variable to include the user-specific Python binaries
 ENV PATH="/home/app/.local/bin:${PATH}"
