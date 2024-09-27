@@ -4,4 +4,4 @@ services:
   app:
     build: .
     ports:
-      - 7534:8080
+      - 30013:8080

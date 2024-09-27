@@ -4,7 +4,7 @@ services:
   web:
     build: . 
     ports:
-      - "8842:80"
+      - "30011:80"
 
   mysql-db:
     image: mysql:latest
