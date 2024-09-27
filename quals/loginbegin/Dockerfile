@@ -8,5 +8,5 @@ RUN chmod 755 -R /var/www/html
 RUN useradd -ms /bin/bash app
 USER app
 
-COPY --chown=app:app . /var/www/html
+COPY --chown=app:app ./landingpage/. /var/www/html
 # COPY ./config/php.ini /usr/local/etc/php/php.ini

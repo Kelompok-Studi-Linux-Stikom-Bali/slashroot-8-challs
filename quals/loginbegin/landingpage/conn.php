@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';
+$host = 'mysql-db';
 $db = 'user_management';
-$user = 'Slashroot8_ctf';  // ganti dengan user MySQL Anda
-$pass = 'fH*5)sng.0eOT*KC';      // ganti dengan password MySQL Anda
+$user = 'root';  // ganti dengan user MySQL Anda
+$pass = 'root';      // ganti dengan password MySQL Anda
 
 $conn = new mysqli($host, $user, $pass, $db);
 
