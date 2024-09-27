@@ -4,4 +4,4 @@ services:
     restart: on-failure
     privileged: true
     ports:
-      - 5000:5000
+      - 20012:5000
