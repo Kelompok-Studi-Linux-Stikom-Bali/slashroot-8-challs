@@ -1,0 +1,14 @@
+service warmup 
+{
+  disable = no
+  socket_type = stream
+  protocol = tcp
+  wait = no
+  user = warmup
+  type = UNLISTED
+  port = 20013
+  bind = 0.0.0.0
+  server = /home/warmup/chall
+  per_source = 10
+  rlimit_cpu = 20
+}
