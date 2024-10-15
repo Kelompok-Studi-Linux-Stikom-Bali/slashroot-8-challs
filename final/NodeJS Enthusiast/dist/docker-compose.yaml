@@ -1,0 +1,26 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: REDACTED
+      MYSQL_DATABASE: user_db
+      MYSQL_USER: REDACTED
+      MYSQL_PASSWORD: REDACTED
+    volumes:
+      - ./src/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  app:
+    build: .
+    container_name: express-app
+    restart: always
+    ports:
+      - "21291:3000"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: REDACTED
+      DB_PASSWORD: REDACTED
+      DB_NAME: user_db
