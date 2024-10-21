@@ -2,7 +2,7 @@ from base64 import b64decode
 import httpx
 from subprocess import check_output
 
-URL = "http://localhost:8080"
+URL = "http://157.230.251.184:30013/"
 
 class BaseAPI:
     def __init__(self, url=URL) -> None:
