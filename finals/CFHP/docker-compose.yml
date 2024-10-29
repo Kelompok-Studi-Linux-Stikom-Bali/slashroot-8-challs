@@ -1,0 +1,9 @@
+services:
+  cfhp:
+    build: .
+    ports:
+      - 9006:8000
+    working_dir: /home/ctf
+    entrypoint: /etc/init.sh
+    init: true
+    restart: always
