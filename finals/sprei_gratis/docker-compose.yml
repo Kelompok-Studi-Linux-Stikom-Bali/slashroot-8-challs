@@ -1,0 +1,8 @@
+services:
+  sprei:
+    build: .
+    environment:
+      - SPREI=slashroot{m4na_s3pr3i_6rat1s_y9_k4u_janj1k4n_Itu_w0k}
+    ports:
+      - "10069:13337"
+    restart: always
