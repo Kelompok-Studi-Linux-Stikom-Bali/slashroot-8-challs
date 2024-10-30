@@ -1,7 +1,6 @@
 # Whale
 
-
-So I am a new devops engineer, one day my server got really big traffic they send suspicious payload. Could u help me to know what he's trying to retrieve?
+So I am a new devops engineer, one day my server got really big traffic. It was really gross because I am not able to understand what he trying to do w my little server🥺. Could u help me to know what he's trying to retrieve?
 
 ## Flag
 
