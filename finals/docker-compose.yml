@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  habbo:
+    build:
+      context: .
+    image: crypto
+    container_name: slashroot8-habbo
+    entrypoint: socat tcp-listen:10012,reuseaddr,fork exec:/home/app/chall.py
+    volumes:
+      - './habbo:/home/app'
+    ports:
+      - '10012:10012'
