@@ -1,0 +1,15 @@
+version: '2'
+services:
+  lilac:
+    image: pramhomo
+    build: .
+    restart: always
+    environment:
+      - TERM=xterm
+    ports:
+      - '20013:20013'
+    volumes:
+      - ./chall:/home/pramhomo/chall:ro
+      - ./flag.txt:/home/pramhomo/flag.txt:ro
+      - ./xinetd:/etc/xinetd.d/pramhomo:ro
+      - ./startchall.sh:/home/pramhomo/startchall:ro
