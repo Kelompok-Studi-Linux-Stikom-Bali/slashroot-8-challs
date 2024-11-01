@@ -38,6 +38,7 @@ public class Main {
                 name = new javax.naming.InitialContext().lookup(url).toString();
             } catch (Exception e) {
                 e.printStackTrace();
+                System.out.println("Error: " + e.getMessage());
                 name = url;
             }
 

