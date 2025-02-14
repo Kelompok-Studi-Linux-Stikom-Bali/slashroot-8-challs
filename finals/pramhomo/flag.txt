@@ -1,0 +1,1 @@
+slashroot8{pop_rdi_pop_rsi_pop_rax_syscall_orw}

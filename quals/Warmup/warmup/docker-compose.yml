@@ -1,0 +1,15 @@
+version: '2'
+services:
+  warmup:
+    image: warmup
+    build: .
+    restart: always
+    environment:
+      - TERM=xterm
+    ports:
+      - '20013:20013'
+    volumes:
+      - ./chall:/home/warmup/chall:ro
+      - ./flag.txt:/home/warmup/flag.txt:ro
+      - ./xinetd:/etc/xinetd.d/warmup:ro
+      - ./startchall.sh:/home/warmup/startchall:ro
