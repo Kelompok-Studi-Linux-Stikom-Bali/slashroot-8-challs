@@ -1,0 +1,13 @@
+Jumlah Chall : 3
+
+Chall 1 (Easy):
+    Nama : Limb
+    Problem : aes encyrption only
+
+Chall 2 (Medium):
+    Nama : Trunk
+    Problem : Truncated lcg with RSA
+    
+Chall 3 (Hard):
+    Nama : Cephal
+    Problem: 1 round aes with no sub bytes

@@ -1,0 +1,1 @@
+flag = b"slashroot8{wait_wut_how_is_1t_just_become_a_simpl3_x0r!!!!!!!!!}"
