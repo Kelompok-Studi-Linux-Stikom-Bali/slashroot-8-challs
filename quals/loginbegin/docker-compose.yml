@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  web:
+    build: . 
+    ports:
+      - "30011:80"
+
+  mysql-db:
+    image: mysql:latest
+    restart: always
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: 'user_management'
+      MYSQL_ROOT_PASSWORD: 'root'
+    volumes:
+      - ./user_management.sql:/docker-entrypoint-initdb.d/01-init.sql:ro

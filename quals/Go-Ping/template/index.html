@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go-Ping Tool</title>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto py-10">
+        <div class="mx-auto bg-white p-8 rounded-lg shadow-md">
+            <h1 class="text-2xl font-bold mb-6 text-center">Go-Ping Tool</h1>
+
+            <div>
+                    <label for="ip" class="block text-sm font-medium text-gray-700">Enter the IP address</label>
+                    <input type="text" name="ip" id="ip" required
+                        class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+                </div>
+
+                <div class="py-2">
+                    <button id="submit" type="submit"
+                        class="w-full text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                        Ping Me
+                    </button>
+                </div>
+
+            <div id="output" class="mt-8 bg-gray-50 p-4 rounded-md shadow-inner">
+                <!-- Output of ping command will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function send() {
+            var address = document.getElementById("ip").value;
+
+            if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(address)) {
+                var json = {};
+                json.address = address
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "/api/ping");
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.send(JSON.stringify(json));
+
+                document.getElementById("output").innerHTML = "<p>sending...</p>";
+
+                xhr.onload = function () {
+                    if (xhr.status != 200) {
+                        document.getElementById("output").innerHTML =
+                            "<p>Request Error : " + xhr.response + "</p>";
+                    } else {
+                        document.getElementById("output").innerHTML =
+                            "<pre><code>" + JSON.parse(xhr.response).result.replaceAll("\n", "<br />") + "</code></pre>";
+                    }
+                };
+            } else {
+                document.getElementById("output").innerHTML = "<p>Invalid IP address</p>";
+            }
+        }
+
+        var init = function () {
+            var btn = document.getElementById("submit");
+            var popup = function () {
+                send();
+            };
+            btn.addEventListener("click", popup, false);
+        };
+
+        window.addEventListener("load", init, false);
+
+    </script>
+</body>
+
+</html>
