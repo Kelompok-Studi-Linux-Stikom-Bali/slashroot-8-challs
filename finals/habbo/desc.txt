@@ -1,8 +1,0 @@
-title: Habbo Hotel
-
-desc:
-Hello, Agents.
-Your mission today is to infiltrate Habbo Hotel and gain access to the heavily-guarded Secret Chamber. Your objective is to steal the classified items stored within.
-
-Hotel Pool's closed due to AIDS, so no relaxing!
-![pools closed](https://i.kym-cdn.com/photos/images/original/000/001/407/pool.jpg)
